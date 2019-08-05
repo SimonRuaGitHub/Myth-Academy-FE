@@ -1,0 +1,38 @@
+<h5>Students Registration</h5>
+<br>
+<div class="row">
+    <div class="col s4"></div>
+    <div class="col s4" [formGroup]="formStudent">
+         <div>
+               <input formControlName="id" type="text" placeholder="ID"/>
+               <span *ngIf="id.errors?.pattern" class="red-text">
+                     Only insert numbers for ID
+               </span>
+         </div>
+        <div>
+             <input formControlName="firstName" type="text" placeholder="First Name"/>
+             <span *ngIf="firstName.errors?.pattern" class="red-text">
+                     Only insert letters for your Name
+            </span>
+        </div>
+         
+       <div>
+            <input formControlName="lastName" type="text" placeholder="Last Name"/>
+            <span *ngIf="lastName.errors?.pattern" class="red-text">
+                         Only insert letters for your Name
+            </span>
+     </div>
+         <div>
+               <button  [disabled]="formStudent.invalid" class="btn waves-effect waves-light" type="submit" (click)=registerStudentWithForm()>Register</button>
+         </div>
+         <span *ngIf="successfullRegistration" class="green-text">
+               Student Have Been Registered Successfully
+         </span>
+    </div>  
+    <div class="col s4"></div>
+</div>
+<br>
+<ul>
+<li *ngFor="let st of studentsArr"  [class.hello-bitch]="st.firstName == 'Tony'">{{st.firstName}}</li>
+</ul>
+<app-students-name [nameOfList]="nameOfList"></app-students-name>
