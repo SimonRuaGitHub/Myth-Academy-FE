@@ -9,20 +9,22 @@ import { CourseServiceHttp } from './courses.service';
 export class CoursesCmpComponent implements OnInit { 
 
   private courseService:CourseServiceHttp;
+  private coursesList:any = [{id:"LEE-235",name:"Bruce Lee story", location:"FirstF-301"},{id:"WOZ-006",name:"World of War Z", location:"SecondF-534"}];
 
   constructor(courseService:CourseServiceHttp) { 
     this.courseService = courseService;
   }
 
-  coursesList:any = [{id:"LEE-235",name:"Bruce Lee story", location:"FirstF-301"},{id:"WOZ-006",name:"World of War Z", location:"SecondF-534"}];
-
   ngOnInit() {
-       console.log( this.courseService.getCourses().subscribe(res => console.log(res)) )
+       this.courseService.getCourses().subscribe(res => {
+                                                          console.log(res)
+                                                           this.coursesList = res;
+                                                            });
   }
 
 }
 
-class Course{
+export class Course{
   id: String;
   name: String;
   location: String;

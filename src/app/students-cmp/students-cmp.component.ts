@@ -15,7 +15,7 @@ export class StudentsCmpComponent implements OnInit{
   nameOfList: string;
   private studentRegistration:StudentRegistrationService;
   private formStudent: FormGroup;
-  private successfullRegistration:boolean;
+  private successfullRegistration: boolean;
 
   constructor(studentRegistration:StudentRegistrationService, private fb: FormBuilder){
               this.studentRegistration = studentRegistration;

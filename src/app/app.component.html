@@ -1,11 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div id="title-brand">
-  <h1>
-    {{ epicTitle }}
-  </h1>
-</div>
+<nav class="white">
+    <a href="#" class="brand-logo"><span id="title-brand">{{ epicTitle }}</span></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a class="dropdown-trigger green-md-on-text" data-target="courses-options">Courses<i class="material-icons right modified-position">arrow_drop_down</i></a></li>   
+      <ul id="courses-options" class="dropdown-content">
+        <li><a routerLink="/courses"><i class="material-icons">assignment</i>List</a></li>
+      </ul>
+      <!-- Dropdown Trigger -->
+      <li><a class='dropdown-trigger green-md-on-text' data-target='student-options'>Students<i class="material-icons right modified-position">arrow_drop_down</i></a></li>
+        <!-- Dropdown Structure -->
+        <ul id='student-options' class='dropdown-content'>
+            <li><a routerLink="/students"><i class="material-icons">add_circle_outline</i>Register</a></li>
+            <li><a routerLink="/students-list"><i class="material-icons">assignment</i>List</a></li>
+        </ul>
+    </ul>
+</nav>
 <div>
-  <app-students-cmp></app-students-cmp>
-  <courses-cmp></courses-cmp>
+  <router-outlet></router-outlet>
 </div>
 <footer-cmp></footer-cmp>

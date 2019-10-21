@@ -6,3 +6,15 @@ div{
     font-family: 'Oleo Script';
     color: #00bfa5;
 }
+
+.green-md-on-text{
+    color: #00bfa5;
+}
+
+.dropdown-content{
+    min-width: 200px;
+}
+
+.modified-position{
+    padding-top: 5px;
+}
