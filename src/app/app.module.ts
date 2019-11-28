@@ -9,10 +9,11 @@ import { AppComponent } from './app.component';
 import { FooterCmpComponent } from './footer-cmp/footer-cmp.component';
 import { StudentsCmpComponent } from './students-cmp/students-cmp.component';
 import { StudentsNameComponent } from './students-cmp/students-name/students-name.component';
-import { CoursesCmpComponent } from './courses-cmp/courses-cmp.component';
+import { CoursesListCmpComponent } from './courses-cmp/courses-list-cmp.component';
 import { PageNotFound } from './error-cmp/page-not-found';
 import { StudentsCmpListComponent } from './students-cmp/students-list/students-cmp-list/students-cmp-list.component';
 import * as $ from 'jquery';
+import { WelcomeCmpComponent } from './welcome-cmp/welcome-cmp.component';
 
 const appRoutes = [
   { path:'students', component: StudentsCmpComponent},
@@ -25,9 +26,10 @@ const appRoutes = [
     FooterCmpComponent,
     StudentsCmpComponent,
     StudentsNameComponent,
-    CoursesCmpComponent,
+    CoursesListCmpComponent,
     PageNotFound,
-    StudentsCmpListComponent
+    StudentsCmpListComponent,
+    WelcomeCmpComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +38,8 @@ const appRoutes = [
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path:'students', component: StudentsCmpComponent},
-      {path:'courses', component: CoursesCmpComponent},
-      {path:'', component: PageNotFound},
+      {path:'courses', component: CoursesListCmpComponent},
+      {path:'', component: WelcomeCmpComponent},
       {path:'students-list', component: StudentsCmpListComponent}
     ])
   ],
