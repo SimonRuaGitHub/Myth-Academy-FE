@@ -5,3 +5,11 @@ ul{
 .hello-bitch{
     color: green;
 }
+
+#successfull-msg{
+   margin-top: 40px;
+}
+
+#btn-reg{
+    margin-top: 30px;
+}

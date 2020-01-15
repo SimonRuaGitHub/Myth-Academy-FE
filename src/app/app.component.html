@@ -4,7 +4,8 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a class="dropdown-trigger" data-target="courses-options" coverTrigger="true">Courses<i class="material-icons right modified-position">arrow_drop_down</i></a></li>   
       <ul id="courses-options" class="dropdown-content blue-grey darken-3">
-        <li><a routerLink="/courses"><i class="material-icons">assignment</i>List</a></li>
+        <li><a routerLink="/courses"><i class="material-icons">add_circle_outline</i>Register</a></li>
+        <li><a routerLink="/courses-list"><i class="material-icons">assignment</i>List</a></li>
       </ul>
       <!-- Dropdown Trigger -->
       <li><a class='dropdown-trigger' data-target='student-options'>Students<i class="material-icons right modified-position">arrow_drop_down</i></a></li>
@@ -12,6 +13,11 @@
         <ul id='student-options' class='dropdown-content blue-grey darken-3'>
             <li><a routerLink="/students"><i class="material-icons">add_circle_outline</i>Register</a></li>
             <li><a routerLink="/students-list"><i class="material-icons">assignment</i>List</a></li>
+        </ul>
+        <li><a class="dropdown-trigger" data-target="grades-options" coverTrigger="true">Grades<i class="material-icons right modified-position">arrow_drop_down</i></a></li>   
+        <ul id="grades-options" class="dropdown-content blue-grey darken-3">
+          <li><a routerLink="/"><i class="material-icons">add_circle_outline</i>Register</a></li>
+          <li><a routerLink="/"><i class="material-icons">assignment</i>List</a></li>
         </ul>
     </ul>
 </nav>

@@ -20,18 +20,4 @@
     </table>
 </div>
 
-  <!-- Modal Delete Course info -->
-<div id="dl-course" class="modal">
-    <div class="modal-content">
-      <h6>Are you sure you want to delete this course?</h6>
-      <div align="left">
-        <label>Course ID</label>
-        <input disabled value="{{course.id}}" type="text" class="validate">
-        <label>Name</label>
-        <input disabled value="{{course.name | uppercase}}" type="text" class="validate">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn waves-effect waves-light red modal-close" (click)="deleteCourse()">Accept</button>
-    </div>
-</div>
+<courses-cmp-delete [course]="course" (newCoursesList)="updatingList($event)"></courses-cmp-delete>

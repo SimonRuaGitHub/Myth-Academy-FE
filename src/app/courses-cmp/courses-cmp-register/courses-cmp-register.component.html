@@ -1,0 +1,23 @@
+<h5>Courses Registration</h5>
+<br>
+<div class="row">
+    <div class="col s4"></div>
+    <div class="col s4" [formGroup]="formCourse">
+        <div>
+            <input formControlName="id" type="text" placeholder="ID">
+        </div>
+        <div>
+            <input formControlName="name" type="text" placeholder="Name">
+        </div>
+        <div>
+            <input formControlName="location" type="text" placeholder="Location">
+        </div>
+        <button id="btn-reg" [disabled]="formCourse.invalid" class="btn waves-effect waves-light" type="submit" (click)=registerCourse()>Register</button>
+        <div id="successfull-msg">
+            <span *ngIf="successfullRegistration" class="green-text">
+                  Course Has Been Registered Successfully
+            </span>
+         </div>
+    </div>
+    <div class="col s4"></div>
+</div>

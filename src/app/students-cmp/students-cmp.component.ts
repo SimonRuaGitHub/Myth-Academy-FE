@@ -36,14 +36,16 @@ export class StudentsCmpComponent implements OnInit{
   };
 
   registerStudentWithForm():void{
+
       this.student = this.formStudent.value;
       console.log("Student Full Name: "+this.student.firstName + " "+this.student.lastName);
       this.studentRegistration.registerStudent(this.student).subscribe(res =>{ 
                                  console.log(res) 
-                                 if(res == "Student successfully saved"){
+                                 if(res == "Saved"){
                                     this.successfullRegistration = true;
                                  }
       });
+      
   }
 
   onNameList(name:string):void {

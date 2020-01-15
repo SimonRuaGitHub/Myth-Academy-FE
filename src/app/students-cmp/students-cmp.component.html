@@ -23,11 +23,13 @@
             </span>
      </div>
          <div>
-               <button  [disabled]="formStudent.invalid" class="btn waves-effect waves-light" type="submit" (click)=registerStudentWithForm()>Register</button>
+               <button id="btn-reg" [disabled]="formStudent.invalid" class="btn waves-effect waves-light" type="submit" (click)=registerStudentWithForm()>Register</button>
          </div>
-         <span *ngIf="successfullRegistration" class="green-text">
-               Student Has Been Registered Successfully
-         </span>
+         <div id="successfull-msg"> 
+            <span  *ngIf="successfullRegistration" class="green-text">
+                  Student Has Been Registered Successfully
+            </span>
+         </div>
     </div>  
     <div class="col s4"></div>
 </div>

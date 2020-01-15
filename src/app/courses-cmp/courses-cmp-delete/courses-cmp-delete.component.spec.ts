@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoursesListCmpComponent } from './courses-list-cmp.component';
+import { CoursesCmpDeleteComponent } from './courses-cmp-delete.component';
 
-describe('CoursesListCmpComponent', () => {
-  let component: CoursesListCmpComponent;
-  let fixture: ComponentFixture<CoursesListCmpComponent>;
+describe('CoursesCmpDeleteComponent', () => {
+  let component: CoursesCmpDeleteComponent;
+  let fixture: ComponentFixture<CoursesCmpDeleteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesListCmpComponent ]
+      declarations: [ CoursesCmpDeleteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoursesListCmpComponent);
+    fixture = TestBed.createComponent(CoursesCmpDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
