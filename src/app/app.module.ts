@@ -19,6 +19,7 @@ import { CoursesCmpEditComponent } from './courses-cmp/courses-cmp-edit/courses-
 import { CoursesCmpRegisterComponent } from './courses-cmp/courses-cmp-register/courses-cmp-register.component';
 import { GradesCmpListComponent } from './grades-cmp/grades-cmp-list/grades-cmp-list.component';
 import { GradesCmpRegisterComponent } from './grades-cmp/grades-cmp-register/grades-cmp-register.component';
+import { GradesCmpSearchingOptionComponent } from './grades-cmp/grades-cmp-searching-option/grades-cmp-searching-option.component';
 
 const appRoutes = [
   { path:'students', component: StudentsCmpComponent},
@@ -39,7 +40,8 @@ const appRoutes = [
     CoursesCmpEditComponent,
     CoursesCmpRegisterComponent,
     GradesCmpListComponent,
-    GradesCmpRegisterComponent
+    GradesCmpRegisterComponent,
+    GradesCmpSearchingOptionComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,10 @@ const appRoutes = [
       {path:'courses-list', component: CoursesListCmpComponent},
       {path:'', component: WelcomeCmpComponent},
       {path:'courses', component: CoursesCmpRegisterComponent},
-      {path:'students-list', component: StudentsCmpListComponent}
+      {path:'students-list', component: StudentsCmpListComponent},
+      {path:'grades-list', component: GradesCmpListComponent},
+      {path:'grades-register', component: GradesCmpRegisterComponent},
+      {path:'search-option-grades', component: GradesCmpSearchingOptionComponent}
     ])
   ],
   providers: [],

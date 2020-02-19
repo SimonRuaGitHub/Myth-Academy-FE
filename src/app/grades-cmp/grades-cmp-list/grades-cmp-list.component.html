@@ -1,1 +1,23 @@
-<p>grades-cmp-list works!</p>
+<div class="container">
+   <h4> General Grades List </h4>
+   <br>
+   <grades-cmp-searching-option (emitterSelectedOpt)="fetchGradesInfo($event)"></grades-cmp-searching-option>
+   <table>
+         <thead>
+             <tr>
+                 <th>Student ID</th>
+                 <th>Student Name</th>
+                 <th>Course Name</th>
+                 <th>Final grade</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let grade of gradesCollection">
+                <td>{{grade.gradesId.student.id}}</td>
+                <td>{{grade.gradesId.student.firstName}}</td>
+                <td>{{grade.gradesId.course.name}}</td>
+                <td>{{grade.value}}</td>
+             </tr>
+         </tbody>
+    </table>
+</div>

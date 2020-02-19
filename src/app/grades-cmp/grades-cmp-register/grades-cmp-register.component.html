@@ -1,1 +1,30 @@
-<p>grades-cmp-register works!</p>
+<div class="container">
+    <h4>Register Student Grade</h4>
+    <div class="row">
+         <div class="col s4"></div>
+         <div class="col s4" [formGroup]="formGrade">
+            <div class="input-field">
+                <input type="number" id="student-info" class="validate" formControlName="studid">
+                <label for="student-info">Student</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="course-info" class="validate" formControlName="crsid">
+                <label for="course-info">Course</label>
+            </div>
+            <div class="input-field">
+                <input type="number" id="value" class="validate" formControlName="value">
+                <label for="value">Value</label>
+            </div>
+            <div>
+              <button id="btn-reg-grd" [disabled]="formGrade.invalid" 
+                      class="btn waves-effect waves-light" type="submit"
+                      (click)="saveGrade()">Register Grade</button>
+            </div>
+            <div>
+                  <label *ngIf="successfullRegGrade" class="green-text">Grade's been registered</label>
+                  <label *ngIf="failedRegGrade" class="red-text">Error Saving Student Grade</label>
+            </div>
+         </div>
+         <div class="col s4"></div>
+    </div>
+</div>
