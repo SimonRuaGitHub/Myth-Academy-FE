@@ -1,5 +1,5 @@
-import { Component, AfterViewInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, AfterViewInit, Output, EventEmitter, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { SearchingGradesOptions } from '../grades-services/searching-option';
 import { filter } from 'rxjs/operators'
 
@@ -8,32 +8,44 @@ import { filter } from 'rxjs/operators'
   templateUrl: './grades-cmp-searching-option.component.html',
   styleUrls: ['./grades-cmp-searching-option.component.css']
 })
-export class GradesCmpSearchingOptionComponent implements AfterViewInit{
+export class GradesCmpSearchingOptionComponent implements AfterViewInit,OnInit{
 
-  private searchOptForm:FormGroup;
-  private searchGradeOptions:String[];
-  @Output() private static emitterSelectedOpt: EventEmitter<SearchingGradesOptions> = new EventEmitter();
+  private searchOptForm:FormGroup
+  private searchGradeOptions:String[]
+  @Output() private emitterSelectedOpt: EventEmitter<SearchingGradesOptions> = new EventEmitter()
 
   constructor(){
-    this.searchGradeOptions = Object.values(SearchingGradesOptions);
-    this.searchOptForm = new FormGroup({searchOption: new FormControl(SearchingGradesOptions.Allgrades)});
-    this.searchOptForm.get("searchOption").valueChanges.pipe(filter(GradesCmpSearchingOptionComponent.isSearchingByField))
-                                                       .subscribe(GradesCmpSearchingOptionComponent.routingToGradesSearching)
+    this.searchGradeOptions = Object.values(SearchingGradesOptions)
+  }
+
+  ngOnInit(): void {
+    this.searchOptForm = new FormGroup({
+                                        searchOption: new FormControl(SearchingGradesOptions.Allgrades),
+                                        searchField: new FormControl({value:'', disabled:true}, Validators.required) 
+                                        })
+    this.searchOptForm.get("searchOption").valueChanges.subscribe(this.routeToGradesSearching)
   }
 
   ngAfterViewInit(): void {
-    (<any>$('select')).formSelect();  
+    (<any>$('select')).formSelect()
   }
 
   private static isSearchingByField(opt):boolean{
 
-      let validate:boolean = !(opt == SearchingGradesOptions.ByCourse || opt == SearchingGradesOptions.ByStudent);
+      let validate:boolean = (opt == SearchingGradesOptions.ByCourse || opt == SearchingGradesOptions.ByStudent);
 
-      return validate;
+      return validate
   }
 
-  private static routingToGradesSearching(opt){
-      console.log("selected option: ",opt)
-      GradesCmpSearchingOptionComponent.emitterSelectedOpt.emit(opt)
+  private routeToGradesSearching = (opt) => {
+
+      console.log("selected searching option: ",opt)
+
+      if(GradesCmpSearchingOptionComponent.isSearchingByField(opt))
+            this.searchOptForm.get("searchField").enable()
+      else{
+            this.searchOptForm.get("searchField").disable()
+            this.emitterSelectedOpt.emit(opt)
+      }
   }
 }

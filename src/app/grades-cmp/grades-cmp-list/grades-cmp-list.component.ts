@@ -23,10 +23,10 @@ export class GradesCmpListComponent implements OnInit {
      this.fetchGradesInfo()
   }
 
-   async fetchGradesInfo(searchingOption?:SearchingGradesOptions){
+    fetchGradesInfo(searchingOption?:SearchingGradesOptions){
       console.log(searchingOption)
 
-   await this.gradesSwticher.searchGradesInfo(searchingOption).subscribe(gradesInfo => this.gradesCollection = gradesInfo);
+    this.gradesSwticher.searchGradesInfo(searchingOption).subscribe(gradesInfo => this.gradesCollection = gradesInfo);
   }
 
 }
