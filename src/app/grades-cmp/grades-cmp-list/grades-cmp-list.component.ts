@@ -26,7 +26,7 @@ export class GradesCmpListComponent implements OnInit {
    async fetchGradesInfo(searchingOption?:SearchingGradesOptions){
       console.log(searchingOption)
 
-   await this.gradesSwticher.searchGradesInfo(searchingOption).then(gradesInfo => this.gradesCollection = gradesInfo);
+   await this.gradesSwticher.searchGradesInfo(searchingOption).subscribe(gradesInfo => this.gradesCollection = gradesInfo);
   }
 
 }
