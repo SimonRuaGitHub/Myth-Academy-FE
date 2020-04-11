@@ -1,6 +1,5 @@
 <div class="row">
-  <div class="col s4"></div>
-  <div class="input-field col s4">
+  <div class="input-field col s3">
    <form [formGroup]="searchOptForm">
      <select formControlName="searchOption">
        <option *ngFor="let opt of searchGradeOptions" [ngValue]="opt">
@@ -10,6 +9,5 @@
      <label>Searching grades option</label>
   </form>
   </div>
-  <div class="col s4"></div>
 </div>
 
